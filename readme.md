@@ -2,7 +2,7 @@
 
 Pomoline is application that implement the use of the Pomodoro technique. Pomoline build with HTML, CSS, and Javascript.
 
-![Pomoline website](/assets/img/pomoline.PNG "Pomoline")
+![Pomoline website](https://github.com/valentinocfs/pomoline/blob/main/assets/img/pomoline.png?raw=true)
 
 ## Features
 
