@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomoline</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+    <div class="loader"><div class="spinner"></div></div>
+    <header class="wrapper">
+        <div class="badge">
+            <p>Pomoline</p>
+        </div>
+        <div class="menu_toggle">
+            <ul>
+                <li>
+                    <button>Menu</button>
+                </li>
+            </ul>
+        </div>
+        <nav class="nav_toggle">
+            <ul class="wrapper">
+                <li>
+                    <span>Setting</span>
+                    <select name="setting" id="countdownDelay">
+                        <option value="20-10">20 - 10</option>
+                        <option value="25-5" selected>25 - 5</option>
+                        <option value="40-20">40 - 20</option>
+                    </select>
+                </li>
+                <li>
+                    <select name="language" id="language">
+                        <option value="en">English</option>
+                        <option value="id">Indonesia</option>
+                    </select>
+                </li>
+                <!-- <li>
+                    <button>
+                        Login
+                    </button>
+                </li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="jumbotron wrapper">
+            <article class="countdown_wrapper">
+                <section class="countdown_rounded">
+                    <div class="circle">
+                        <p class="countdownTimer">25:00</p>
+                    </div>
+                </section>
+                <section class="countdown_buttons">
+                    <button id="countdownStart" onclick="start()">Start</button>
+                    <button id="countdownPause" onclick="pause()" hidden>Pause</button>
+                    <button id="countdownResume" onclick="resume()" hidden>Resume</button>
+                    <button id="countdownReset" onclick="reset()" hidden>Reset</button>
+                </section>
+            </article>
+            <section class="countdown_options">
+                <button onclick="pomodoro()">Pomodoro</button>
+                <p class="banner">OPTIONS</p>
+                <button onclick="shortBreak()">Short Break</button>
+            </section class="countdown_options">
+            <section class="countdown_progress">
+                <input type="progress" disabled>
+            </section>
+
+        </div>
+        <aside class="tasks wrapper">
+            <article class="tasks_header">
+                <section class="title">
+                    <h3>Tasks</h3>
+                    <input type="hidden" name="">
+                    <button onclick="clearTasks()">Clear Tasks</button>
+                </section>
+                <section class="add">
+                    <input type="text" placeholder="Add Task" id="inputTasks" />
+                    <button id="addTask">+</button>
+                </section>
+            </article>
+            <article class="tasks_body">
+                <!-- Task Lists  -->
+            </article>
+        </aside>
+    </main>
+    <footer class="wrapper">
+        <section class="top">
+            <p class="badge">
+                Pomoline
+            </p>
+            <p>
+                Inspiration by <a href="https://pomofocus.io" target="_blank">Pomofocus</a>
+            </p>
+        </section>
+        <section class="bottom">
+            <p>Made by <a href="https://valentinocfs.netlify.app/" target="_blank">Valentino Stania</a></p>
+        </section>
+    </footer>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/translate.js"></script>
+</body>
+</html>

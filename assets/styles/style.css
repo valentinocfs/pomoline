@@ -1,0 +1,387 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+button, select, input {
+    background:rgba(235, 235, 235, 0.100);
+    border: none;
+    cursor: pointer;
+    color: rgb(245, 245, 245);
+    padding: 14px 28px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: rgba(235, 235, 235, 0.200);
+    position: relative;
+    top: -1px;
+    transition: position 0.5s;
+}
+
+input:checked {
+    outline: none;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    color: rgb(245, 245, 245);
+    background: rgb(19, 19, 19);
+    overflow-x: hidden;
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(19, 19, 19);
+    overflow: hidden;   
+    display: block;
+    transition: display 0.5s;
+}
+
+.loader > div {
+    height: 60px;
+    width: 60px;
+    border: 10px solid rgba(235, 235, 235, 0.200);
+    border-top-color: rgb(241, 82, 82);
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.wrapper {
+    padding: 0 10%;
+    margin: 0 auto;
+}
+
+header {
+    height: 60px;
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(61, 61, 61, 0.350);
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 1px 5px rgba(61, 61, 61, 0.150);
+    z-index: 3;
+    overflow: hidden;
+}
+
+header button, select {
+    background:rgb(245, 245, 245);
+    color: rgb(19, 19, 19);
+    padding: 10px 24px;
+}
+
+.badge {
+    font-size: 1.5rem;
+}
+
+nav {
+    display: none;
+}
+
+.nav_active {
+    display: block;
+    position: absolute;
+}
+
+nav ul {
+    background: rgba(61, 61, 61, 0.350);
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 1px 5px rgba(61, 61, 61, 0.150);
+    animation: navbar 0.01s ease-in-out;
+}
+
+nav ul li {
+    margin: 2rem 0;
+}
+
+.jumbotron {
+    width: 100%;
+    background-image: linear-gradient(to bottom, 
+                rgba(19, 19, 19, 0.100), 
+                rgba(19, 19, 19, 0.600), 
+                rgba(19, 19, 19, 0.999)), 
+                url("../img/hill.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: fill;
+    position: relative;
+}
+
+.countdown_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 160px;
+    position: relative;
+}
+
+.countdown_rounded {
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.countdown_rounded .circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(245, 245, 245, 0.100);
+    box-shadow: 0 0 15px rgba(245, 245, 245, 0.100),
+    0 0 15px rgba(61, 61, 61, 0.100);
+}
+
+.countdown_rounded .countdownTimer {
+    font-size: 4rem;
+    letter-spacing: -5px;
+    color: rgb(245, 245, 245);
+    text-align: center;
+    line-height: 300px;
+}
+
+.countdown_buttons button {
+    margin-top: 32px;
+    text-transform: uppercase;
+    background: rgba(235, 235, 235, 0.100);
+} 
+
+.countdown_options {
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 5px;
+}
+
+.countdown_options p{
+    display: none;
+}
+
+.countdown_progress input {
+    width: 100%;
+    height: 3px;
+    padding: 0;
+    margin-top: 5vh;
+    border: none;
+    outline: none;
+    cursor: none;
+}
+
+aside {
+    background-color: rgba(19, 19, 19);
+    padding-bottom: 60px;
+}
+
+.tasks_header {
+    margin-top: 1rem;
+}
+
+.tasks_header section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tasks_header .add {
+    font-size: 1.5rem;
+    width: 100%;
+    border: 1px dotted rgb(245, 245, 245);
+    background: rgb(19, 19, 19);
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 3px;
+}
+
+.tasks_header .add input {
+    width: 80%;
+    margin-right: 10px;
+    padding: 14px;
+    background: transparent;
+}
+
+.tasks_body {
+    overflow-x: visible;
+    padding-bottom: 60px;
+}
+
+.tasks_list {
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 3px;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.task_done {
+    border: 1px solid rgb(142, 255, 77);
+}
+
+.tasks_list .action {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 11%;
+}
+
+.tasks_list .action button {
+    padding: 10px;
+}
+
+.tasks_list .action button:hover {
+    border: 1px solid rgb(241, 82, 82);
+}
+
+footer {
+    background:rgb(19, 19, 19);
+    box-shadow: -10px 1px 1px 1px rgba(255, 255, 255, 0.247);
+}
+
+footer section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .top {
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+}
+
+footer .bottom {
+    justify-content: center;
+    padding-bottom: 32px;
+}
+
+
+footer a {
+    color: rgb(241, 82, 82)
+}
+
+@media screen and (min-width: 599px) {
+    .wrapper {
+        padding: 0 20%;
+    }
+    
+    footer .top {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    .wrapper {
+        padding: 0 30%;
+    }
+
+    .menu_toggle {
+        display: none;
+    }
+
+    nav {
+        display: block;
+        margin: 0;
+        padding: 10px;
+    }
+    
+    nav ul {
+        background: transparent;
+        position: relative;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+        padding: 10px;
+    }
+    nav ul li {
+        position: relative;
+        left: -120px;
+    }
+
+    nav ul li:not(:last-child) {
+        margin: 0;
+        margin-right: 16px;
+    }
+
+    nav ul li {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .countdown_options {
+        width: 70%;
+        text-align: center;
+        margin: 32px auto;
+        margin-bottom: 0;
+    }
+
+    .countdown_options p{
+        display: block;
+    }
+    
+}
+
+@media screen and (min-width: 1800px) {
+    .wrapper {
+        padding: 0 35%;
+    }
+}
+
+@keyframes navbar {
+    0% {
+        top: -20px;
+        /* z-index: -9; */
+    }
+    100% {
+        top: 0;
+        /* z-index: 1; */
+    }
+}
